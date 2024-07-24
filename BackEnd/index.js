@@ -8,6 +8,11 @@ app.use(cors({ credentials: true, origin: "*" }));
 
 app.use(express.json());
 
-app.use(express.static("public"));
+// Importar rotas
+const movieRoutes = require("./routes/movieRoutes");
 
-app.listen(port);
+app.use("/movies", movieRoutes);
+
+app.listen(port, () => {
+  console.log(`Servidor rodando na porta: ${port}`);
+});
