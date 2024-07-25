@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 // Icons
 import { BiSolidCameraMovie, BiMoviePlay } from "react-icons/bi";
 import { MdMovieFilter } from "react-icons/md";
+import { GrSearchAdvanced } from "react-icons/gr";
 
 const Navbar = () => {
   return (
@@ -12,6 +13,11 @@ const Navbar = () => {
         <li>
           <Link to="/">
             <BiSolidCameraMovie /> ReactCine
+          </Link>
+        </li>
+        <li>
+          <Link to="/search">
+            <GrSearchAdvanced /> Search
           </Link>
         </li>
         <li>
