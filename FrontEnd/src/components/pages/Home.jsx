@@ -4,6 +4,12 @@ import axios from "axios";
 // Hooks
 import { useState, useEffect } from "react";
 
+// React Router Dom
+import { Link } from "react-router-dom";
+
+// Components
+import MovieDetail from "./MovieDetail";
+
 const Home = () => {
   const [movies, setMovies] = useState([{}]);
 
@@ -32,7 +38,7 @@ const Home = () => {
                 alt={movie.title}
               />
               <h3>Título: {movie.title}</h3>
-              <button>Mais Detalhes</button>
+              <Link to={`/movie/${movie.id}`}> Detalhes </Link>
             </div>
           ))}
         </ul>

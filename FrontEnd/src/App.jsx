@@ -10,6 +10,7 @@ import Home from "./components/pages/Home";
 import Register from "./components/pages/Register";
 import Login from "./components/pages/Login";
 import Search from "./components/pages/Search";
+import MovieDetail from "./components/pages/MovieDetail";
 
 // React-Toastify
 import { ToastContainer } from "react-toastify";
@@ -25,6 +26,7 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/movie/:id" element={<MovieDetail />} />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -29,6 +29,7 @@ const Search = () => {
 
   return (
     <div className="search">
+      <div className="bgd-search"></div>
       <h1>Pesquise seu filme:</h1>
       <form className="form-container" onSubmit={handleSubmit}>
         <div className="form-control">
