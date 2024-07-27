@@ -48,6 +48,22 @@ body {
   font-size: 20px;
 }
 
+.logout {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.5s;
+  color: #ff6347;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.logout:hover {
+  background-color: #ff6347;
+  color: #222;
+}
+
 /* Home */
 
 .home {
@@ -285,6 +301,66 @@ body {
 .card-details p span {
   color: #ff6347;
   font-weight: bold;
+}
+
+.sections-container {
+  width: 400px;
+  margin: 0 auto 150px;
+  text-align: center;
+}
+
+.sections-container h2 {
+  margin-bottom: 50px;
+  font-size: 1.5rem;
+  border-bottom: solid 2px #ff6347;
+  padding: 15px;
+}
+
+.sections-container h2 span {
+  color: #ff6347;
+}
+
+.sections-card {
+  padding: 25px;
+  background-color: #000;
+  border: 1px solid #ff6347;
+  border-radius: 5px;
+}
+
+.button-controle button {
+  padding: 7px 25px;
+  font-weight: bold;
+  border: solid #ff6347 1px;
+  border-radius: 5px;
+  background-color: #222;
+  color: #ff6347;
+  cursor: pointer;
+  transition: 0.5s;
+  margin: 15px;
+}
+
+.button-controle button:hover {
+  background-color: #ff6347;
+  color: #222;
+  border: solid 1px #222;
+}
+
+.button-sale button {
+  padding: 7px 25px;
+  font-weight: bold;
+  border: solid #ff6347 1px;
+  border-radius: 5px;
+  background-color: #ff6347;
+  color: #222;
+  cursor: pointer;
+  transition: 0.5s;
+  margin: 15px;
+}
+
+.button-sale button:hover {
+  background-color: #222;
+  color: #ff6347;
+  border: solid 1px #ff6347;
 }
 
 /* Footer */

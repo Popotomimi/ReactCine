@@ -1,14 +1,11 @@
-// Axios
-import axios from "axios";
-
 // Hooks
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 // React Router Dom
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-// React Toastify
-import { toast } from "react-toastify";
+// Context
+import { Context } from "../../context/UserContext";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -17,34 +14,18 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const user = {
-        name: name,
-        email: email,
-        phone: phone,
-        password: password,
-        confirmpassword: confirmPassword,
-      };
+  const { register } = useContext(Context);
 
-      const response = await axios.post(
-        "http://localhost:8800/users/register",
-        user
-      );
-      const result = response.data;
-      toast.warn(result.message);
-    } catch (error) {
-      if (
-        error.response &&
-        error.response.data &&
-        error.response.data.message
-      ) {
-        toast.error(error.response.data.message);
-      } else {
-        toast.error("Erro desconhecido. Tente novamente mais tarde.");
-      }
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const user = {
+      name: name,
+      email: email,
+      phone: phone,
+      password: password,
+      confirmpassword: confirmPassword,
+    };
+    register(user);
   };
 
   return (

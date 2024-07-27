@@ -46,6 +46,7 @@ module.exports = class userController {
       res.status(422).json({
         message: "E-mail já cadastrado, utilize outro",
       });
+      return;
     }
 
     // Criando a senha com bcrypt e colocando um salt
@@ -66,5 +67,42 @@ module.exports = class userController {
     } catch (error) {
       res.status(500).json({ message: error });
     }
+  }
+
+  static async login(req, res) {
+    const { email, password } = req.body;
+
+    // Validações
+    if (!email) {
+      res.status(422).json({ message: "O e-mail é obrigatório!" });
+      return;
+    }
+
+    if (!password) {
+      res.status(422).json({ message: "A senha é obrigatória!" });
+      return;
+    }
+
+    // Verificando se o usuário já esta cadastrado no banco de dados
+    const user = await User.findOne({ email: email });
+
+    if (!user) {
+      res
+        .status(422)
+        .json({ message: "Não existe usuário cadastrado com esse e-mail!" });
+      return;
+    }
+
+    // Verificando se a senha é a mesma cadastrada no DB
+    const checkPassword = await bcrypt.compare(password, user.password);
+
+    if (!checkPassword) {
+      res.status(422).json({
+        message: "Senha inválida",
+      });
+      return;
+    }
+
+    await createUserToken(user, req, res);
   }
 };

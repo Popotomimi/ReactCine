@@ -16,6 +16,7 @@ const MovieDetail = () => {
   const { id } = useParams();
 
   const [movie, setMovie] = useState([]);
+  const [hour, setHour] = useState("");
 
   useEffect(() => {
     const searchId = async () => {
@@ -50,31 +51,43 @@ const MovieDetail = () => {
         )}
       </div>
       <div className="sections-container">
-        <h2>Seções para: {year.toLocaleDateString()}</h2>
+        <h2>
+          Seções para: <span>{year.toLocaleDateString()}</span>
+        </h2>
         <div className="sections-card">
           <div className="button-controle">
-            <button>
+            <button onClick={() => setHour("11:00")}>
               11:00 Hrs <GiAlarmClock />{" "}
             </button>
-            <button>
+            <button onClick={() => setHour("13:00")}>
               13:00 Hrs <GiAlarmClock />{" "}
             </button>
           </div>
           <div className="button-controle">
-            <button>
+            <button onClick={() => setHour("15:30")}>
               15:30 Hrs <GiAlarmClock />{" "}
             </button>
-            <button>
+            <button onClick={() => setHour("18:00")}>
               18:00 Hrs <GiAlarmClock />{" "}
             </button>
           </div>
           <div className="button-controle">
-            <button>
+            <button onClick={() => setHour("20:30")}>
               20:30 Hrs <GiAlarmClock />{" "}
             </button>
-            <button>
+            <button onClick={() => setHour("22:00")}>
               22:00 Hrs <GiAlarmClock />{" "}
             </button>
+          </div>
+          <div className="results">
+            {hour !== "" ? (
+              <p>Filme agendado para: {hour} Hrs</p>
+            ) : (
+              <p>Agende seu horário!</p>
+            )}
+          </div>
+          <div className="button-sale">
+            <button>Comprar</button>
           </div>
         </div>
       </div>

@@ -16,19 +16,24 @@ import MovieDetail from "./components/pages/MovieDetail";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+// Context
+import { UserProvider } from "./context/UserContext";
+
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <ToastContainer autoClose={3000} position="top-center" />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/movie/:id" element={<MovieDetail />} />
-      </Routes>
-      <Footer />
+      <UserProvider>
+        <Navbar />
+        <ToastContainer autoClose={3000} position="top-center" />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/movie/:id" element={<MovieDetail />} />
+        </Routes>
+        <Footer />
+      </UserProvider>
     </BrowserRouter>
   );
 }
