@@ -38,7 +38,8 @@ const Home = () => {
                 alt={movie.title}
               />
               <h3>Título: {movie.title}</h3>
-              <Link to={`/movie/${movie.id}`}> Detalhes </Link>
+              <p>Preço: 33,90</p>
+              <Link to={`/movie/${movie.id}`}> Comprar </Link>
             </div>
           ))}
         </ul>

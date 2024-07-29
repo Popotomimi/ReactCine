@@ -29,6 +29,7 @@ export default function useAuth() {
         return response.data;
       });
       await authUser(data);
+      toast.success("Voce esta autenticado!");
     } catch (error) {
       if (
         error.response &&
@@ -49,6 +50,7 @@ export default function useAuth() {
       });
 
       await authUser(data);
+      toast.success("Login realizado com sucesso!");
     } catch (error) {
       toast.error(error.response.data.message);
     }

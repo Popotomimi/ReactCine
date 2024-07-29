@@ -4,6 +4,12 @@
   font-family: Helvetica;
 }
 
+.back-home a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ff6347;
+}
+
 body {
   background-color: #222;
   color: #fff;
@@ -361,6 +367,78 @@ body {
   background-color: #222;
   color: #ff6347;
   border: solid 1px #ff6347;
+}
+
+.authenticated {
+  text-align: center;
+  width: 400px;
+  margin: 0 auto 150px;
+}
+
+.authenticated h2 {
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #ff6347;
+}
+
+.authenticated p {
+  margin-bottom: 15px;
+}
+
+.authenticated p a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ff6347;
+}
+
+/* Seat Selection */
+
+.seat-selections {
+  text-align: center;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.screen {
+  background-color: #ff6347;
+  color: white;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.seats-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  background-color: #222;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.seat.selected {
+  background-color: #ff6347;
+  border-radius: 5px;
+}
+
+.selected-seats {
+  margin-top: 20px;
 }
 
 /* Footer */

@@ -4,6 +4,9 @@ import axios from "axios";
 // Hooks
 import { useState } from "react";
 
+// React Router Dom
+import { Link } from "react-router-dom";
+
 // Icons
 import { CgSearchLoading } from "react-icons/cg";
 
@@ -53,7 +56,7 @@ const Search = () => {
                 alt={result.title}
               />
               <h3>Título: {result.title}</h3>
-              <button>Mais Detalhes</button>
+              <Link to={`/notmovie/${result.id}`}> Detalhes </Link>
             </div>
           ))}
       </ul>
