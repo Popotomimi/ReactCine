@@ -11,6 +11,9 @@ import { useEffect, useState } from "react";
 import { Context } from "../../context/UserContext";
 import { useContext } from "react";
 
+// Message
+import { toast } from "react-toastify";
+
 // Icons
 import { GiAlarmClock } from "react-icons/gi";
 
@@ -35,6 +38,10 @@ const MovieDetail = () => {
   }, [id]);
 
   const handlePurchase = () => {
+    if (!hour) {
+      toast.warn("Você precisa selecionar um horário!");
+      return;
+    }
     navigate(`/seat-selection/${id}`, { state: { hour } });
   };
 

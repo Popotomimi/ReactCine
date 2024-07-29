@@ -395,8 +395,19 @@ body {
 
 .seat-selections {
   text-align: center;
-  padding-top: 150px;
   padding-bottom: 150px;
+}
+
+.bkg-img-seat {
+  height: 400px;
+  width: 100%;
+  background-image: url("./assets/img/seat-selection.jfif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  margin-bottom: 50px;
+  border: none;
+  border-radius: 5px;
 }
 
 .screen {
@@ -439,6 +450,36 @@ body {
 
 .selected-seats {
   margin-top: 20px;
+}
+
+.hours {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.hours span {
+  color: #ff6347;
+  font-weight: bold;
+}
+
+.qrcode img {
+  width: 400px;
+  height: 400px;
+  margin-top: 20px;
+  border-radius: 15px;
+}
+
+.btn-finaly {
+  padding: 7px 25px;
+  font-weight: bold;
+  border: solid #ff6347 1px;
+  border-radius: 5px;
+  background-color: #ff6347;
+  color: #222;
+  cursor: pointer;
+  transition: 0.5s;
+  margin-top: 15px;
+  margin-bottom: 30px;
 }
 
 /* Footer */
